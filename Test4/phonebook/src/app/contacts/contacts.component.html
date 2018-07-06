@@ -1,0 +1,34 @@
+<table class="table table-stripped">
+  <thead> <tr>
+      <td>
+          Имя
+      </td>
+      
+      <td>
+          Номер телефона
+      </td>
+      
+      <td>
+          Адрес
+      </td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let person of persons" (click)="onSelect(person)" [class.active]="person===selectedPerson">
+    <td>
+        {{person.name}}
+    </td>
+    
+    <td>
+        {{person.number}}
+    </td>
+    
+    <td>
+        {{person.address}}
+    </td>
+   <a (click)="onRemoveSelect(person)"> Удалить</a> 
+  </tr>
+</tbody>
+</table>
+
+<app-person-detail>[person]=selectedPerson</app-person-detail>

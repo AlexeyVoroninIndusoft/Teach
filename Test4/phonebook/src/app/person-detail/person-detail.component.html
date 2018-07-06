@@ -1,0 +1,28 @@
+<div class='col-md-9'> 
+    <div class="form-inline"> 
+           
+             <label>Имя: 
+               <input *ngIf="person" class="form-control" [(ngModel)] = person.name  placeholder = "Введите имя" type = "text"> 
+               <input *ngIf="person == null" class="form-control" [(ngModel)]="name" placeholder = "Введите имя" type = "text"> 
+             </label> 
+           
+           
+               <label>Номер: 
+                 <input *ngIf="person" class="form-control"  [(ngModel)] = person.number placeholder = "Введите номер телефона" type = "text"> 
+                 <input *ngIf="person == null" class="form-control"  [(ngModel)]="number" placeholder = "Введите номер телефона" type = "text"> 
+               </label> 
+               <label>Адрес: 
+                 <input *ngIf="person" class="form-control"  [(ngModel)] = person.address placeholder = "Введите адрес" type = "text"> 
+                 <input *ngIf="person == null" class="form-control"  [(ngModel)]="address" placeholder = "Введите адрес" type = "text"> 
+               </label> 
+           
+         </div> 
+       </div> 
+       <div class="col-md-3"> 
+           
+           <div> 
+               <a *ngIf="person == null" (click)="onAddNewPerson(name, number, address)" >Добавить</a> 
+               <a *ngIf="person" (click)="onAddNewPerson(person.name, person.number, person.address)" >Добавить</a> 
+           </div> 
+</div>   
+    
